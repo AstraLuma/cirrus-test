@@ -1,25 +1,6 @@
-# direct_task:
-#   container:
-#     image:  astraluma/entrypoint-debug
-#   env:
-#     CIRRUS_SHELL: direct
-#   script:
-#     - __SCRIPT_COMMAND_1__
-#     - __SCRIPT_COMMAND_2__
-
-
-# standard_task:
-#   container:
-#     image:  astraluma/entrypoint-debug
-#   script:
-#     - __SCRIPT_COMMAND_1__
-#     - __SCRIPT_COMMAND_2__
-
-
-direct_ep_task:
+direct_task:
   container:
     image:  astraluma/entrypoint-debug
-    entrypoint: ["/entrypoint"]
   env:
     CIRRUS_SHELL: direct
   script:
@@ -27,10 +8,19 @@ direct_ep_task:
     - __SCRIPT_COMMAND_2__
 
 
-standard_ep_task:
+standard_task:
   container:
     image:  astraluma/entrypoint-debug
-    entrypoint: ["/entrypoint"]
+  script:
+    - __SCRIPT_COMMAND_1__
+    - __SCRIPT_COMMAND_2__
+
+
+entrypoint_task:
+  container:
+    image:  astraluma/entrypoint-debug
+  env:
+    CIRRUS_SHELL: /entrypoint
   script:
     - __SCRIPT_COMMAND_1__
     - __SCRIPT_COMMAND_2__

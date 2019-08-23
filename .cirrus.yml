@@ -1,5 +1,6 @@
 direct_task:
-  container: astraluma/entrypoint-debug
+  container:
+    image:  astraluma/entrypoint-debug
   env:
     CIRRUS_SHELL: direct
   script:
@@ -8,7 +9,8 @@ direct_task:
 
 
 standard_task:
-  container: astraluma/entrypoint-debug
+  container:
+    image:  astraluma/entrypoint-debug
   script:
     - __SCRIPT_COMMAND_1__
     - __SCRIPT_COMMAND_2__
